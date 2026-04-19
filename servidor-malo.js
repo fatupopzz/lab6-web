@@ -12,7 +12,7 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (req.url === "/info") {
-    res.writeHead(200, { "Content-Type": "application-json" });
+    res.writeHead(200, { "Content-Type": "application/json" });
     res.end("Ruta de información");
     return;
   }
@@ -32,4 +32,3 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, () => {
   console.log("Servidor corriendo en http://localhost:3000");
 });
-

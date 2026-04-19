@@ -23,6 +23,12 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  if (req.url === "/saludo") {
+    res.writeHead(200, { "Content-Type": "text/plain" });
+    res.end("¡Hola! Bienvenido al servidor de Sistemas y Tecnologías Web 👋");
+    return;
+  }
+
   if (req.url === "/api/student") {
     const filePath = path.join(process.cwd(), "datos.json");
     const texto = await fs.readFile(filePath, "utf-8");
